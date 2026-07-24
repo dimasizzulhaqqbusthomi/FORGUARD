@@ -68,6 +68,18 @@ export const LatestAlertCard: React.FC<LatestAlertCardProps> = ({
     }
   };
 
+  const getRiskExplanation = (level: string) => {
+    switch (level) {
+      case "Tinggi":
+        return "Suara mencurigakan dan getaran tidak normal terdeteksi dalam waktu berdekatan.";
+      case "Sedang":
+        return "Sensor akustik mendeteksi suara mencurigakan berulang, tetapi belum disertai getaran tidak normal.";
+      case "Rendah":
+      default:
+        return "Hanya salah satu sensor mendeteksi aktivitas mencurigakan.";
+    }
+  };
+
   const recStyles = getRecommendationStyles(riskLevel);
 
   // sound percentage for simple indicator progress bar (max 120 dB)
@@ -92,7 +104,7 @@ export const LatestAlertCard: React.FC<LatestAlertCardProps> = ({
 
       {/* Card Body */}
       <div className="p-6 flex-1 flex flex-col justify-between gap-6">
-        <div className="space-y-4.5">
+        <div className="space-y-4">
           {/* Risk and Detection type */}
           <div className="flex items-center justify-between gap-4">
             <RiskBadge risk={riskLevel} />
@@ -168,6 +180,16 @@ export const LatestAlertCard: React.FC<LatestAlertCardProps> = ({
                 />
               </div>
             </div>
+          </div>
+
+          {/* Risk Explanation Box */}
+          <div className="bg-slate-50/80 dark:bg-slate-950/40 border border-slate-200/60 dark:border-slate-800/60 rounded-lg p-3 text-xs space-y-1">
+            <span className="font-bold text-slate-700 dark:text-slate-300 block">
+              Analisis Fusi Sensor ({riskLevel}):
+            </span>
+            <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+              {getRiskExplanation(riskLevel)}
+            </p>
           </div>
         </div>
 

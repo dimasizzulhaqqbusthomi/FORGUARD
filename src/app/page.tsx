@@ -7,6 +7,7 @@ import { MonitoringMap } from "../components/MonitoringMap";
 import { LatestAlertCard } from "../components/LatestAlertCard";
 import { AlertHistoryTable } from "../components/AlertHistoryTable";
 import { ActivityChart } from "../components/ActivityChart";
+import { RiskCriteriaLegend } from "../components/RiskCriteriaLegend";
 import { SensorStatusTable } from "../components/SensorStatusTable";
 import { sensors, Sensor } from "../data/sensors";
 import { alerts, Alert } from "../data/alerts";
@@ -142,6 +143,9 @@ export default function Home() {
             highlight={true}
           />
         </div>
+
+        {/* Risk Criteria Explanation Legend */}
+        <RiskCriteriaLegend />
 
         {/* Map and Active Alert Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
