@@ -144,9 +144,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Risk Criteria Explanation Legend */}
-        <RiskCriteriaLegend />
-
         {/* Map and Active Alert Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Map Area */}
