@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8faf9;
+  --foreground: #0f172a;
+}
+
+.dark {
+  --background: #080d0b;
+  --foreground: #f1f5f9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Custom Forest Colors */
+  --color-forest-50: #f0f7f4;
+  --color-forest-100: #dcece3;
+  --color-forest-200: #bbdac9;
+  --color-forest-300: #90c0a7;
+  --color-forest-400: #62a081;
+  --color-forest-500: #428263;
+  --color-forest-600: #32674e;
+  --color-forest-700: #29533f;
+  --color-forest-750: #1f4031;
+  --color-forest-800: #1b372a;
+  --color-forest-900: #152c22;
+  --color-forest-950: #0a1711;
+
+  /* Custom animations */
+  --animate-ping-slow: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-pulse-slow: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ping-slow {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom styles for Leaflet to fit inside the dark/light premium dashboard theme */
+.leaflet-container {
+  font-family: inherit;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
