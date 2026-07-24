@@ -63,7 +63,7 @@ export const HeaderDashboard: React.FC = () => {
             Dashboard Pemantauan Hutan
           </h2>
           <p className="text-sm md:text-base text-emerald-200/90 font-medium mt-1 max-w-3xl leading-relaxed">
-            Sistem Deteksi Dini Penebangan Ilegal Berbasis Sensor Akustik dan Getaran
+            Sistem Deteksi Dini Penebangan Ilegal Berbasis Fusi Sensor Akustik dan Getaran
           </p>
         </div>
 

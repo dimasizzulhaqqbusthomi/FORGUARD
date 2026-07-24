@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "FORGUARD - Dashboard Pemantauan Hutan Kalimantan Tengah",
-  description: "Sistem Deteksi Dini Penebangan Ilegal Berbasis Sensor Akustik dan Getaran di Hutan Kalimantan Tengah",
+  description: "Sistem Deteksi Dini Penebangan Ilegal Berbasis Fusi Sensor Akustik dan Getaran di Hutan Kalimantan Tengah",
 };
 
 export default function RootLayout({
