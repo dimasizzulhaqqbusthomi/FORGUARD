@@ -82,7 +82,7 @@ export default function Home() {
   const priorityAreasCount = Array.from(
     new Set(
       sensors
-        .filter((s) => s.riskLevel === "Prioritas" || s.riskLevel === "Darurat")
+        .filter((s) => s.riskLevel === "Tinggi")
         .map((s) => s.kabupaten)
     )
   ).length;
@@ -129,7 +129,7 @@ export default function Home() {
             trend={{ value: "+2 kasus", isPositive: false }}
           />
           <StatCard
-            title="Kabupaten Prioritas"
+            title="Kabupaten Berisiko Tinggi"
             value={5}
             icon={<AreaChart className="w-5.5 h-5.5" />}
             description={`Dari total ${priorityAreasCount} wilayah berisiko tinggi`}
@@ -171,7 +171,7 @@ export default function Home() {
             <LatestAlertCard
               alert={activeAlertDetail}
               title={
-                selectedSensor.riskLevel === "Aman"
+                selectedSensor.riskLevel === "Rendah"
                   ? "Detail Kondisi Sensor"
                   : "Detail Peringatan Sensor"
               }

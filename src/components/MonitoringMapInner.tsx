@@ -48,13 +48,10 @@ export const MonitoringMapInner: React.FC<MonitoringMapInnerProps> = ({
     let colorClass = "bg-emerald-500 border-emerald-300";
     let ringClass = "bg-emerald-400";
     
-    if (sensor.riskLevel === "Darurat") {
+    if (sensor.riskLevel === "Tinggi") {
       colorClass = "bg-rose-500 border-rose-300";
       ringClass = "bg-rose-400";
-    } else if (sensor.riskLevel === "Prioritas") {
-      colorClass = "bg-orange-500 border-orange-300";
-      ringClass = "bg-orange-400";
-    } else if (sensor.riskLevel === "Waspada") {
+    } else if (sensor.riskLevel === "Sedang") {
       colorClass = "bg-amber-500 border-amber-300";
       ringClass = "bg-amber-400";
     }
@@ -63,7 +60,7 @@ export const MonitoringMapInner: React.FC<MonitoringMapInnerProps> = ({
       ? "ring-4 ring-emerald-500/30 scale-125 z-[999]" 
       : "hover:scale-115";
 
-    const pulseMarkup = (sensor.riskLevel === "Darurat" || sensor.riskLevel === "Prioritas")
+    const pulseMarkup = sensor.riskLevel === "Tinggi"
       ? `<span class="absolute inline-flex h-full w-full rounded-full ${ringClass} opacity-75 animate-ping-slow"></span>`
       : "";
 

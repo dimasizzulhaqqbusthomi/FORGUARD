@@ -49,21 +49,17 @@ export const LatestAlertCard: React.FC<LatestAlertCardProps> = ({
   // Recommendations styling based on risk level
   const getRecommendationStyles = (level: string) => {
     switch (level) {
-      case "Darurat":
+      case "Tinggi":
         return {
           bg: "bg-rose-50 dark:bg-rose-950/20 border-rose-200 dark:border-rose-900/30 text-rose-800 dark:text-rose-300",
           icon: <ShieldAlert className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0" />,
         };
-      case "Prioritas":
-        return {
-          bg: "bg-orange-50 dark:bg-orange-950/20 border-orange-200 dark:border-orange-900/30 text-orange-800 dark:text-orange-300",
-          icon: <ShieldAlert className="w-5 h-5 text-orange-600 dark:text-orange-400 shrink-0" />,
-        };
-      case "Waspada":
+      case "Sedang":
         return {
           bg: "bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900/30 text-amber-800 dark:text-amber-300",
           icon: <ShieldAlert className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0" />,
         };
+      case "Rendah":
       default:
         return {
           bg: "bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-900/30 text-emerald-800 dark:text-emerald-300",

@@ -65,10 +65,9 @@ export const AlertHistoryTable: React.FC<AlertHistoryTableProps> = ({
               className="bg-transparent font-semibold text-slate-700 dark:text-slate-200 focus:outline-none cursor-pointer"
             >
               <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Semua">Semua</option>
-              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Aman">Aman</option>
-              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Waspada">Waspada</option>
-              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Prioritas">Prioritas</option>
-              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Darurat">Darurat</option>
+              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Rendah">Rendah</option>
+              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Sedang">Sedang</option>
+              <option className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100" value="Tinggi">Tinggi</option>
             </select>
           </div>
 
